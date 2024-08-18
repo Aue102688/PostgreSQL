@@ -58,6 +58,8 @@ def edit_note(note_id):
     form = forms.NoteForm(obj=note)
 
     if form.validate_on_submit():
+
+        note.description = form.description.data
         note.title = form.title.data
         # note.content = form.content.data
 
